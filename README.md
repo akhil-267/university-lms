@@ -50,6 +50,13 @@ The backend must enforce authentication, university isolation, assignment/owners
 - `frontend/faculty.html`: Faculty workspace.
 - `frontend/student.html`: Student workspace.
 
-Every user page loads the shared Bootstrap, CSS and JavaScript files. Menu sections remain hash-based within that user's HTML page, for example `faculty.html#questions` and `student.html#results`. Switch role returns to `index.html`. Each role page can also be opened directly. jQuery is not required: native JavaScript handles existing forms, navigation and exam interactions.
+Every user page loads Bootstrap and shared helpers, followed by only its own feature files from `frontend/users/<role>/`. Menu sections remain hash-based within that user's HTML page, for example `faculty.html#questions` and `student.html#results`. Switch role returns to `index.html`. Each role page can also be opened directly. jQuery is not required: native JavaScript handles existing forms, navigation and exam interactions.
 
 The separate pages do not implement authentication or server-side permissions. On Laravel integration, protect every role route and API on the server. Shared browser storage keeps the demo submission/evaluation/publication flow working across role pages.
+
+
+## Editing by user
+
+Functionality is organized into `frontend/users/super-admin/`, `frontend/users/university-admin/`, `frontend/users/faculty/` and `frontend/users/student/`. Each folder has an `app.js` for its menu, data scope and event registration, feature files such as `exams.js` and `results.js`, and an optional `styles.css`. Shared UI, layout, fixture data and startup helpers are in `frontend/shared/`. The old all-role `assets/app.js` is removed.
+
+Read [EDITING_GUIDE.md](EDITING_GUIDE.md) for the exact file to modify for each feature, examples and steps to add a new screen. Source files are formatted for readability. Run `node --test tests/role-isolation.test.cjs` to check that each page loads only its own role scripts and common helpers.

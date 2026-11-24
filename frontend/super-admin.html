@@ -1,17 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Super Admin · University LMS</title>
-<meta name="description" content="University LMS frontend with role-based academic administration, examination and performance screens.">
-<link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
-<link rel="stylesheet" href="assets/styles.css">
-<script src="assets/app.js" defer></script>
-</head>
-<body data-role="super">
-<a href="#main" class="skip-link">Skip to content</a>
-<div id="app"></div>
-<dialog id="modal" aria-labelledby="modal-title"></dialog>
-<div id="toast" role="status" aria-live="polite"></div>
-<noscript>This workspace needs JavaScript. Please enable it to use the frontend demo.</noscript>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Super Admin · University LMS</title>
+    <meta
+      name="description"
+      content="University LMS frontend with role-based academic administration, examination and performance screens."
+    />
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="shared/styles.css" />
+    <link rel="stylesheet" href="users/super-admin/styles.css" />
+    <script src="shared/data.js" defer></script>
+    <script src="shared/ui.js" defer></script>
+    <script src="shared/layout.js" defer></script>
+    <script src="users/super-admin/dashboard.js" defer></script>
+    <script src="users/super-admin/universities.js" defer></script>
+    <script src="users/super-admin/reports.js" defer></script>
+    <script src="users/super-admin/app.js" defer></script>
+    <script src="shared/bootstrap.js" defer></script>
+  </head>
+  <body data-role="super">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div id="app"></div>
+    <dialog id="modal" aria-labelledby="modal-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript
+      >This workspace needs JavaScript. Please enable it to use the frontend
+      demo.</noscript
+    >
+  </body>
+</html>

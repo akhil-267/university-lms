@@ -1,17 +1,39 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Faculty · University LMS</title>
-<meta name="description" content="University LMS frontend with role-based academic administration, examination and performance screens.">
-<link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
-<link rel="stylesheet" href="assets/styles.css">
-<script src="assets/app.js" defer></script>
-</head>
-<body data-role="faculty">
-<a href="#main" class="skip-link">Skip to content</a>
-<div id="app"></div>
-<dialog id="modal" aria-labelledby="modal-title"></dialog>
-<div id="toast" role="status" aria-live="polite"></div>
-<noscript>This workspace needs JavaScript. Please enable it to use the frontend demo.</noscript>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faculty · University LMS</title>
+    <meta
+      name="description"
+      content="University LMS frontend with role-based academic administration, examination and performance screens."
+    />
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="shared/styles.css" />
+    <link rel="stylesheet" href="users/faculty/styles.css" />
+    <script src="shared/data.js" defer></script>
+    <script src="shared/ui.js" defer></script>
+    <script src="shared/layout.js" defer></script>
+    <script src="users/faculty/dashboard.js" defer></script>
+    <script src="users/faculty/courses.js" defer></script>
+    <script src="users/faculty/students.js" defer></script>
+    <script src="users/faculty/questions.js" defer></script>
+    <script src="users/faculty/exams.js" defer></script>
+    <script src="users/faculty/evaluation.js" defer></script>
+    <script src="users/faculty/results.js" defer></script>
+    <script src="users/faculty/analytics.js" defer></script>
+    <script src="users/faculty/reports.js" defer></script>
+    <script src="users/faculty/app.js" defer></script>
+    <script src="shared/bootstrap.js" defer></script>
+  </head>
+  <body data-role="faculty">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div id="app"></div>
+    <dialog id="modal" aria-labelledby="modal-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript
+      >This workspace needs JavaScript. Please enable it to use the frontend
+      demo.</noscript
+    >
+  </body>
+</html>
