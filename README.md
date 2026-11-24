@@ -60,3 +60,12 @@ The separate pages do not implement authentication or server-side permissions. O
 Functionality is organized into `frontend/users/super-admin/`, `frontend/users/university-admin/`, `frontend/users/faculty/` and `frontend/users/student/`. Each folder has an `app.js` for its menu, data scope and event registration, feature files such as `exams.js` and `results.js`, and an optional `styles.css`. Shared UI, layout, fixture data and startup helpers are in `frontend/shared/`. The old all-role `assets/app.js` is removed.
 
 Read [EDITING_GUIDE.md](EDITING_GUIDE.md) for the exact file to modify for each feature, examples and steps to add a new screen. Source files are formatted for readability. Run `node --test tests/role-isolation.test.cjs` to check that each page loads only its own role scripts and common helpers.
+
+
+## Webpage screenshots
+
+View the [screenshot gallery](screenshots/README.md) for all four user dashboards, question bank, examination creation, student attempt, evaluation, results, analytics and reports. All screenshots show fictional sample data.
+
+![LMS entry page](screenshots/01-entry-page.jpg)
+
+![University Admin dashboard](screenshots/03-university-admin-dashboard.jpg)
