@@ -5,3 +5,12 @@
 .shell>div{min-width:0}.table-wrap{min-width:0;max-width:100%}
 @media(max-width:760px){.sidebar{display:none;left:0}.shell.nav-open .sidebar{display:flex}.topbar{gap:10px}.topbar>.user-block{flex-shrink:0}.topbar .avatar{display:none}.context-label{font-size:11px}.topbar .context-title{font-size:12px}.topbar>.menu-toggle{flex-shrink:0}}
 .dashboard-grid>div,.question-layout>*{min-width:0}.panel-head h2{min-width:0}.panel-head .text-link{flex-shrink:0}
+
+/* Shared role entry page. Individual workspaces reuse the dashboard styles. */
+.workspace-picker{width:100%;max-width:600px;align-self:center;justify-self:center;padding:45px}
+.role-cards{display:grid;gap:13px;margin:25px 0}
+.role-card{display:flex;gap:16px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:9px;color:var(--ink);text-decoration:none;background:white;transition:border-color .15s,background .15s}
+.role-card:hover,.role-card:focus-visible{border-color:var(--primary);background:#f0f7f3;color:var(--ink)}
+.role-card strong{display:block;font-size:16px}.role-card small{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.role-card-icon{display:grid;place-items:center;flex-shrink:0;width:42px;height:42px;border-radius:8px;background:#eaf2ed;font-size:24px;color:var(--primary)}
+@media(max-width:760px){.workspace-picker{padding:30px 24px}.role-card{padding:16px}}

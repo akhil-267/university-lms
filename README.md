@@ -10,7 +10,7 @@ From this repository:
 python3 -m http.server 8080 --directory frontend
 ```
 
-Open http://localhost:8080. Choose Super Admin, University Admin, Faculty or Student. These are demo personas, not authenticated accounts. Bootstrap CSS is bundled locally with its license header for offline use. No Bootstrap JavaScript is needed.
+Open http://localhost:8080/index.html. Select a role card to navigate to its separate HTML page. These are demo personas, not authenticated accounts. Bootstrap CSS is bundled locally with its license header for offline use. No Bootstrap JavaScript is needed.
 
 ## Included
 
@@ -32,7 +32,7 @@ Open http://localhost:8080. Choose Super Admin, University Admin, Faculty or Stu
 4. Open Results and publish the approved result.
 5. Switch to Student and review the published result and analytics.
 
-Changes persist only in the current browser's localStorage under `university-lms-demo-v1`. Persona selection is in sessionStorage. Clear the demo storage key through browser developer tools to reset. Do not use real student data.
+Changes persist only in the current browser's localStorage under `university-lms-demo-v1`. Each HTML page selects its role using a data-role attribute. The current student attempt ID is kept in sessionStorage. Clear the demo storage key through browser developer tools to reset. Do not use real student data.
 
 ## Boundaries
 
@@ -40,4 +40,16 @@ This is a frontend demonstration, not a secure deployable LMS. Role switching an
 
 The backend must enforce authentication, university isolation, assignment/ownership, server timing, transactional/idempotent submission, secure grading, audit logging and result publication. Browser timeout only runs while the page is open; it catches expired attempts when reopened but is not an autonomous server submission system. CSV is not a native Excel workbook. Multi-group analytics, assignment groups, import, live notifications, email recovery and correction workflows await backend/policy work. Reports currently use the single sample cohort; grouped report choices explain this limitation in the UI.
 
-See [Laravel integration notes](docs/laravel-integration.md) for the handoff.
+
+
+## Separate user pages
+
+- `frontend/index.html`: shared entry page with four workspace links.
+- `frontend/super-admin.html`: Super Admin workspace.
+- `frontend/university-admin.html`: University Admin workspace.
+- `frontend/faculty.html`: Faculty workspace.
+- `frontend/student.html`: Student workspace.
+
+Every user page loads the shared Bootstrap, CSS and JavaScript files. Menu sections remain hash-based within that user's HTML page, for example `faculty.html#questions` and `student.html#results`. Switch role returns to `index.html`. Each role page can also be opened directly. jQuery is not required: native JavaScript handles existing forms, navigation and exam interactions.
+
+The separate pages do not implement authentication or server-side permissions. On Laravel integration, protect every role route and API on the server. Shared browser storage keeps the demo submission/evaluation/publication flow working across role pages.
